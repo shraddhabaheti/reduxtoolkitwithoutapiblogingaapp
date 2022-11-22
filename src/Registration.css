@@ -1,0 +1,137 @@
+.Registration_design{
+    /* font-size: 48px; */
+  background: -webkit-linear-gradient(rgb(27, 25, 25), rgb(199, 25, 193));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: serif; 
+  font-size:40px;
+  font-style: bold;
+  margin-top: 7px;
+}
+.label_name{
+display: block;
+font-size: 20px;
+width: 79%;
+    font-family: cursive;
+}
+.input_name{
+ padding: 8px;
+ width: 27%;
+ border-radius: 8px
+}
+.submit_button{width: 27%;
+    padding: 8px;
+    margin-top: 30px;
+    font-family: cursive;
+    font-size: 20px;
+    background: -webkit-linear-gradient(rgb(6, 7, 3), rgb(171, 11, 163));
+     color: white;
+}
+.div1{
+    margin: 16px;
+}
+.Navbar{
+    position: fixed;
+    padding: 14px;
+    background: -webkit-linear-gradient(rgb(237, 149, 158), rgb(207, 214, 215));
+   
+}
+.link{
+    margin: 20px;
+    text-decoration: none;
+    font-size: 33px;
+    margin-left: 40px;
+
+    /* color: aquamarine; */
+    background: -webkit-linear-gradient(rgb(140, 9, 215), rgb(63, 204, 55));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+    font-family: cursive;
+}
+.error{
+    color: red;
+    font-size: 16px;
+    display: block;
+    font-family: cursive;
+    width: 85%;
+}
+
+    .Form{
+        background-color: antiquewhite;
+        padding: 30px;
+    }
+
+
+.input_curd{
+    padding: 20px;
+}
+.css-kznubb-MuiButtonBase-root-MuiFab-root{
+    margin: 5px !important;
+}
+.css-10mg1vw-MuiStepper-root {
+    /* background-color: rgb(22, 28, 21); */
+   padding: 50px; 
+   background: -webkit-linear-gradient(rgb(138, 16, 116), rgb(37, 123, 135));
+   border-radius: 15px;
+     margin: 20px;
+   
+    
+ }
+ .css-1hv8oq8-MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+    /* color: bisque; */
+ }
+ .css-1hv8oq8-MuiStepLabel-label.Mui-active {
+   color: bisque;
+ }
+ 
+ .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
+   font-size: 3.5rem !important;
+   fill: #0c8b8b !important;
+   border: 1px solid white ;
+   border-radius: 50% ;
+ }
+ .css-zpcwqm-MuiStepConnector-root{
+  top: 27px !important;
+  left: calc(-48% + 20px) !important;
+     right: calc(52% + 20px) !important;
+ }
+ p,h1{
+     color: rebeccapurple;
+ }
+ .css-hyum1k-MuiToolbar-root {
+    min-height: 64px;
+    min-height: 113px !important;
+    color: black;
+    background: -webkit-linear-gradient(rgb(237, 149, 158), rgb(207, 214, 215));
+ }
+ .css-i4bv87-MuiSvgIcon-root {
+
+ }
+ .css-10hburv-MuiTypography-root {
+     font-size: 30px;
+    background: -webkit-linear-gradient(rgb(164, 18, 197), rgb(166, 180, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+      font-family: cursive;
+ }
+ .css-i4bv87-MuiSvgIcon-root {
+   color:black;
+   font-size: 1.5rem !important;
+   
+ }
+ .css-ciy9n4-MuiPaper-root-MuiAppBar-root{
+width: 8% !important;
+box-shadow: none !important;
+ } 
+ .css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper{
+     width: 275px !important;
+ }
+ .css-imwso6-MuiBottomNavigationAction-label{
+    background: -webkit-linear-gradient(rgb(164, 18, 197), rgb(166, 180, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+      font-family: cursive;
+ }

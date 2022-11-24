@@ -13,6 +13,10 @@ let  getpostSlice=createSlice({
             console.log(current(state));
            
            },
+           deleteData:(state,action)=>{
+            console.log(current(state));
+            let f=state.postData?.splice(action.payload,1);
+           }
         
         // removeData(state) {
         //     return {postData: []}
@@ -21,5 +25,5 @@ let  getpostSlice=createSlice({
        
     }
 })
-export const {postData,removeData}=getpostSlice.actions;
+export const {postData,deleteData}=getpostSlice.actions;
 export default getpostSlice.reducer;

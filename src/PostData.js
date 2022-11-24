@@ -27,7 +27,7 @@ const PostData = () => {
 
     // } 
     const handleFile =async (e) => {
-       
+       let file=URL.createObjectURL(e.target.files[0])
         // let file=e.target.files[0]
         // let base64=await convertBase64(file)
         // console.log("*************",base64)
@@ -40,7 +40,7 @@ const PostData = () => {
         //  let url = URL.createObjectURL(e.target.files[0]);
         setState({
             ...state,
-            [e.target.name]: e.target.files[0]
+            [e.target.name]:file
            
         })
     }

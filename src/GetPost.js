@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { postData,removeTodo } from './Features/GetpostSlice'
+import { deleteData, postData,removeTodo } from './Features/GetpostSlice'
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -13,30 +13,29 @@ const GetPost = () => {
    
     const dispatch=useDispatch()
     
- useEffect(()=>{
+//  useEffect(()=>{
     
-    dispatch(postData())
-  },[])
+//     dispatch(postData())
+//   },[])
 
 
-// const onDelete=()=>{
-    
-//  let res=  data.postData.postData.filter((item)=>item.email_id !==data.email_id)
-//  console.log(res)
-// }
+const onDelete=()=>{
+    dispatch(deleteData(data))
+
+}
 
   return (
     <div>
       <form >
           <h1>GetPost Data</h1>
           {
-              data?.postData?.postData?.map((item)=>{
+              data?.postData?.postData?.map((item,index)=>{
                   return(
-                      <div>
+                      <div key={index}>
                          <h1>{item?.title}</h1>
                           <p>{item?.content}</p>
-                          <img  src={item?.image} ></img>
-                      
+                          <img className='image'  src={item?.image} ></img>
+                          <button onClick={onDelete}>Delete</button>
                        
                       </div>
                 //     <Card style={{ width: '18rem' }}>

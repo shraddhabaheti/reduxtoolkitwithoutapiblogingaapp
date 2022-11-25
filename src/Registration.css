@@ -135,7 +135,8 @@ box-shadow: none !important;
    
       font-family: cursive;
  }
- .image{
-     width: 400px;
-     height: 400px;
+ 
+ .cardImage{
+    width: 30rem !important;
+    height:30rem !important;
  }

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { json } from 'react-router-dom';
+import { display, height, margin } from '@mui/system';
 const GetPost = () => {
    
     const data = useSelector((state) => state);
@@ -24,6 +25,7 @@ const onDelete=()=>{
 
 }
 
+
   return (
     <div>
       <form >
@@ -31,13 +33,23 @@ const onDelete=()=>{
           {
               data?.postData?.postData?.map((item,index)=>{
                   return(
-                      <div key={index}>
-                         <h1>{item?.title}</h1>
-                          <p>{item?.content}</p>
-                          <img className='image'  src={item?.image} ></img>
-                          <button onClick={onDelete}>Delete</button>
+                    <Card key={index} style={{ width: '23rem', height:"20rem"  ,display:'contents', margin:"30px" }} >
+                    <Card.Img className='cardImage' variant="top" src={item?.image} />
+                    <Card.Body>
+                      <Card.Title>{item?.title}</Card.Title>
+                      <Card.Text>
+                      {item?.content}   
+                   </Card.Text>
+                      <Button variant="primary" onClick={onDelete}>Delete</Button>
+                    </Card.Body>
+                  </Card>
+                      // <div key={index}>
+                      //    <h1>{item?.title}</h1>
+                      //     <p>{item?.content}</p>
+                      //     <img className='image'  src={item?.image} ></img>
+                      //     {/* <button onClick={onDelete}>Delete</button> */}
                        
-                      </div>
+                      // </div>
                 //     <Card style={{ width: '18rem' }}>
                 //     <Card.Img variant="top" src="holder.js/100px180" />
                 //     <Card.Body>

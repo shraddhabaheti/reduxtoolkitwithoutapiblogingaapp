@@ -27,10 +27,11 @@ const PostData = () => {
 
     // } 
     const handleFile =async (e) => {
-       let file=URL.createObjectURL(e.target.files[0])
-        // let file=e.target.files[0]
-        // let base64=await convertBase64(file)
-        // console.log("*************",base64)
+    //   let file=URL.createObjectURL(e.target.files[0])
+    
+        let file=e.target.files[0]
+        let base64=await convertBase64(file)
+        console.log("*************",base64)
         // let parseImage=JSON.parse( base64);
         // console.log("parse image",parseImage)
 
@@ -40,24 +41,25 @@ const PostData = () => {
         //  let url = URL.createObjectURL(e.target.files[0]);
         setState({
             ...state,
-            [e.target.name]:file
+            [e.target.name]:base64
            
         })
     }
   
-// const convertBase64=(file)=>{
-// return new Promise ((resolve,reject)=>{
+const convertBase64=(file)=>{
+return new Promise ((resolve,reject)=>{
 
-//  const fileReader=new FileReader();
+ const fileReader=new FileReader();
 //  fileReader.readAsDataURL(file);
-//  fileReader.onload =()=>{
-//     resolve(fileReader.result)
-//  }
-//  fileReader.onerror=(error)=>{
-//      reject(error)
-//  }
-// })
-// }
+ fileReader.onload =()=>{
+    resolve(fileReader.result)
+ }
+ fileReader.readAsDataURL(file);
+ fileReader.onerror=(error)=>{
+     reject(error)
+ }
+})
+}
 
     const onSubmit = (e) => {
         e.preventDefault();

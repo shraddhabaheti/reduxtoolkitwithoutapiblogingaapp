@@ -10,7 +10,7 @@ const GetPost = () => {
    
     const data = useSelector((state) => state);
    
-    console.log("====>",data)
+    console.log("====> get data",data)
    
     const dispatch=useDispatch()
     
@@ -34,7 +34,7 @@ const onDelete=()=>{
               data?.postData?.postData?.map((item,index)=>{
                   return(
                     <Card key={index} style={{ width: '23rem', height:"20rem"  ,display:'contents', margin:"30px" }} >
-                    <Card.Img className='cardImage' variant="top" src={item?.image} />
+                    <Card.Img className='cardImage' variant="top" src={item.image}/>
                     <Card.Body>
                       <Card.Title>{item?.title}</Card.Title>
                       <Card.Text>

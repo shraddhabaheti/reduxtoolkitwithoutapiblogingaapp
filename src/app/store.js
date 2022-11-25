@@ -8,22 +8,33 @@ import { combineReducers } from "redux";
 import persistReducer from "redux-persist/es/persistReducer";
 import postDatareducer from '../Features/GetpostSlice'
 // import  regreducer from '../Features/RegistrationSlice'
-
+// import { curryGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
 const persistConfig = {
    key: 'root',
    version:1,
    storage,
+  
  }
  let reducers = combineReducers({
     todo :todoReducer,
      login:reducer,
      register:registrationReducer,
      postData:postDatareducer,
-    
+   
     
  });
  
  const persiReducer = persistReducer(persistConfig,reducers );
 export default configureStore ({
-   reducer:persiReducer
+   reducer:persiReducer,
+   // middleware: GetDefaultMiddleware({
+   //    serializableCheck: {
+   //      ignoredActions: [],
+   //    },
+   //  }),
+   middleware: getDefaultMiddleware =>
+   getDefaultMiddleware({
+     serializableCheck: false,
+   }),
+   
 })

@@ -7,7 +7,7 @@ let  getpostSlice=createSlice({
     },
     reducers:{
         postData :(state,action) =>{
-         
+            
             state.postData = [...state.postData,action.payload]
             console.log("=====> action",action)
             console.log(current(state));

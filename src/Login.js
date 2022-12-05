@@ -112,7 +112,7 @@ const Login = () => {
               <input type="text"name='password' className='input_name' onChange={handleChange}/>
                <span className='error'>{error.password}</span>
           </div>
-          <button className='submit_button' onClick={Submit}>Login</button>
+          <button className='submit_button'  onClick={Submit}>Login</button>
       </form>
    
     </div>

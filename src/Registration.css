@@ -136,7 +136,11 @@ box-shadow: none !important;
       font-family: cursive;
  }
  
- .cardImage{
+ /* .cardImage{
     width: 30rem !important;
     height:30rem !important;
+ } */
+ .indexCard{
+    width: 23rem !important;
+    margin: 30px !important;
  }

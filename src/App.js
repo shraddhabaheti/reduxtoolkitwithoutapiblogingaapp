@@ -10,8 +10,13 @@ import Todocurd from './curd/TodoCurd';
 import LinearStrapper from './LinearStrapper';
 import GetPost from './GetPost';
 import PostData from './PostData';
-
-
+import { About } from './About';
+import M from './M';
+import Getapi from './Getapi';
+import Postapi from './Postapi';
+import Count from './Count';
+import RedCount from './RedCount';
+import ArrauUseState from './ArrauUseState';
 
 
 function App() {
@@ -34,7 +39,12 @@ function App() {
       </Routes>
      
     </BrowserRouter>
-   
+      {/* <M/>   */}
+    {/* <Getapi/> */}
+    {/* <Postapi/> */}
+    {/* <Count/> */}
+    {/* <RedCount/> */}
+    {/* <ArrauUseState/> */}
     </div>
   );
 }

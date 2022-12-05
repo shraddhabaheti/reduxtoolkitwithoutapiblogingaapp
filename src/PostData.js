@@ -31,7 +31,7 @@ const PostData = () => {
     
         let file=e.target.files[0]
         let base64=await convertBase64(file)
-        console.log("*************",base64)
+        // console.log("*************",base64)
         // let parseImage=JSON.parse( base64);
         // console.log("parse image",parseImage)
 

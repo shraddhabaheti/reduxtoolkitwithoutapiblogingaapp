@@ -17,6 +17,7 @@ import Postapi from './Postapi';
 import Count from './Count';
 import RedCount from './RedCount';
 import ArrauUseState from './ArrauUseState';
+import Tempapp from './component/Tempapp';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
        <Route path="/" element={<PresidentDrawer/>}></Route>
        <Route path="/post" element={<PostData/>}></Route>
        <Route path="/get" element={<GetPost/>}></Route>
+       <Route path="/temp" element={<Tempapp/>}></Route>
      
       </Routes>
      
@@ -45,6 +47,7 @@ function App() {
     {/* <Count/> */}
     {/* <RedCount/> */}
     {/* <ArrauUseState/> */}
+   
     </div>
   );
 }

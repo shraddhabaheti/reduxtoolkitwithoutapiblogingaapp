@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { json } from 'react-router-dom';
 import { postData } from './Features/GetpostSlice';
-
+import './Registration.css';
 const PostData = () => {
     const [state, setState] = useState({
         title: '',
@@ -79,8 +79,9 @@ return new Promise ((resolve,reject)=>{
     }
     return (
         <div>
+        
+            <form  className='Form'>
             <h1>post Data in Design</h1>
-            <form  >
                 <input type="text" name="title" onChange={handleChange} /> <br /><br />
                 <textarea type="text" name="content" onChange={handleChange}></textarea><br /><br />
 

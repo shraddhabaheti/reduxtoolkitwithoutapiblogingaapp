@@ -4,6 +4,7 @@ import { deleteData, postData,removeTodo } from './Features/GetpostSlice'
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './Registration.css';
 import { json } from 'react-router-dom';
 import { display, height, margin } from '@mui/system';
 const GetPost = () => {
@@ -28,7 +29,7 @@ const onDelete=()=>{
 
   return (
     <div>
-      <form >
+      <form  className='Form'>
           <h1>GetPost Data</h1>
           {
               data?.postData?.postData?.map((item,index)=>{

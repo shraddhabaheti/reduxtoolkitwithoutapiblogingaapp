@@ -29,7 +29,8 @@ function Next() {
             <Link to="/hori" className='link'>Strapper</Link>
             <Link to="/post" className='link'>PostData</Link>
             <Link to="/get" className='link'>GetPost</Link>
-       
+            <Link to="/temp" className='link'>temp</Link>
+          
       
       
           </Nav>

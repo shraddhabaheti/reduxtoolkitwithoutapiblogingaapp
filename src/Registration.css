@@ -144,3 +144,8 @@ box-shadow: none !important;
     width: 23rem !important;
     margin: 30px !important;
  }
+ .div_style{
+    float: right;
+    margin-top: -68px;
+    font-size: 26px;
+}

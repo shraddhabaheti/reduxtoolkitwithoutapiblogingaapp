@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Registration.css';
 export default function Tempapp() {
-  let Time=new Date().toLocaleTimeString()
+  let Time=new Date().toLocaleTimeString('en-US')
   const [cTime,setCTime]=useState(Time);
   const [city,setCity]=useState(null)
   const [search,setSerch]=useState(null)
@@ -17,15 +17,18 @@ export default function Tempapp() {
     fetchApi()
   },[search])
  const updateTime=()=>{
-   let Time=new Date().toLocaleTimeString();
+   let Time=new Date().toLocaleTimeString('en-US');
    setCTime(Time)
  }
  setInterval(updateTime,1000)
   return (
     <div>
       <form className='Form'>
+     
       <h1>Weather app </h1>
-    
+     <div className='div_style'>
+     <p>{cTime}</p>
+     </div>
     <input value={search} className='input_name' type ="serch" placeholder='serch....'onChange={(e)=>{setSerch(e.target.value)}}/> <br/><br/>
     {/* <input  className='input_name' type ="text" placeholder='Country....'/><br/> 
     <button className='submit_button' type='submit'>Get Weather</button> */}
@@ -44,7 +47,7 @@ export default function Tempapp() {
      )
 
    }
-   <h1>{cTime}</h1>
+   
       </form>
       
      {/* <div>

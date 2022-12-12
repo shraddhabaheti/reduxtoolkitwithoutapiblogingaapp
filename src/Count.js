@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function Count() {
     const inital=0
+   
     const [count,setCount]=useState(inital);
     const [name,setName]=useState({
         firstName:'',
@@ -20,6 +21,7 @@ export default function Count() {
     }
   return (
     <div>
+     
       count:{count}
       <button onClick={()=>setCount(inital)}>Reset</button>
       <button onClick={()=>setCount(count+1)}>increment</button>

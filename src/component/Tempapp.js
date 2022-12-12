@@ -1,9 +1,11 @@
-
 import React, { useEffect, useState } from 'react'
 import '../Registration.css';
 export default function Tempapp() {
+  let Time=new Date().toLocaleTimeString()
+  const [cTime,setCTime]=useState(Time);
   const [city,setCity]=useState(null)
-  const [search,setSerch]=useState('mumbai')
+  const [search,setSerch]=useState(null)
+  
   useEffect(()=>{
     const fetchApi=async()=>{
       const url=`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=4a35237ec8058813aa3a12b9d02865b5`
@@ -14,7 +16,11 @@ export default function Tempapp() {
     }
     fetchApi()
   },[search])
- 
+ const updateTime=()=>{
+   let Time=new Date().toLocaleTimeString();
+   setCTime(Time)
+ }
+ setInterval(updateTime,1000)
   return (
     <div>
       <form className='Form'>
@@ -30,14 +36,15 @@ export default function Tempapp() {
        <div>
          <div>
       <h1>city :-  {search} </h1><br/>
-      <h3>{city.temp}°Cel </h3><br/>
-      <p>{city.temp_max}°Cel  || {city.temp_min}°Cel  </p>
+      <h3>{city.temp} °Cel </h3><br/>
+      <p>{city.temp_max} °Cel  || {city.temp_min} °Cel  </p>
     </div>
    
     </div>
      )
 
    }
+   <h1>{cTime}</h1>
       </form>
       
      {/* <div>

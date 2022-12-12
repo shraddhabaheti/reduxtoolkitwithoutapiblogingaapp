@@ -21,8 +21,10 @@ import Tempapp from './component/Tempapp';
 
 
 function App() {
+  
   return (
     <div className="App">
+     
     <BrowserRouter>
      
     <Next/>

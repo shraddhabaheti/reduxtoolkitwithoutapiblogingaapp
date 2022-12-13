@@ -149,3 +149,13 @@ box-shadow: none !important;
     margin-top: -68px;
     font-size: 26px;
 }
+.div_dd{
+
+display: flex;
+    /* margin: 30px; */
+    border: 2px soild red ;
+    justify-content: center;
+}
+.div_mar{
+    margin: 30px;
+}

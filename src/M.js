@@ -22,7 +22,7 @@ export default function M() {
   //     inHours:function(d1,d2){
   //       var t2 = d2.getTime();
   //         var t1 = d1.getTime();
-  //       return parseInt((t1-t2)/(3600*1000*60)%24);
+  //       return parseInt((t1-t2)/(3600*1000)%24);
   //     },
   //       inMinutes:function(d1,d2){
   //       var t2 = d2.getTime();

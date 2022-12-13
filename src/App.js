@@ -18,7 +18,8 @@ import Count from './Count';
 import RedCount from './RedCount';
 import ArrauUseState from './ArrauUseState';
 import Tempapp from './component/Tempapp';
-
+import Time from './Time';
+import Quiz from './Quiz';
 
 
 function App() {
@@ -40,7 +41,9 @@ function App() {
        <Route path="/post" element={<PostData/>}></Route>
        <Route path="/get" element={<GetPost/>}></Route>
        <Route path="/temp" element={<Tempapp/>}></Route>
-     
+       <Route path="/quiz" element={<Quiz/>}></Route>
+       <Route path="/time" element={<Time/>}></Route>
+       
       </Routes>
      
     </BrowserRouter>
@@ -50,7 +53,7 @@ function App() {
     {/* <Count/> */}
     {/* <RedCount/> */}
     {/* <ArrauUseState/> */}
-  
+   
     </div>
   );
 }

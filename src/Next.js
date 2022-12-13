@@ -30,6 +30,8 @@ function Next() {
             <Link to="/post" className='link'>PostData</Link>
             <Link to="/get" className='link'>GetPost</Link>
             <Link to="/temp" className='link'>temp</Link>
+            <Link to="/quiz" className='link'>Quiz</Link>
+            <Link to="/time" className='link'>Time</Link>
           
       
       

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Registration.css';
+ 
+
 export default function Tempapp() {
   let Time=new Date().toLocaleTimeString('en-US')
   const [cTime,setCTime]=useState(Time);
@@ -58,6 +60,7 @@ export default function Tempapp() {
      <div></div>
      <div></div>
      <div></div> */}
+     
     </div>
   )
 }

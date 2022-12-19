@@ -20,7 +20,8 @@
   } */
   
   .app {
-    background-color: #1bdcf2;
+    /* background-color: #ebf4f7; */
+    background: -webkit-linear-gradient(rgb(233, 163, 228), rgb(161, 151, 157));
     width: 45%;
      margin: 10px;
     margin-left: 446px; 
@@ -28,7 +29,7 @@
     height: min-content;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 10px 10px 42px 0px rgba(110, 206, 208, 0.75);
+    box-shadow: 10px 10px 42px 0px rgba(129, 104, 146, 0.75);
     display: flex;
     justify-content: space-evenly;
   }
@@ -51,10 +52,12 @@
   
   .question-count span {
     font-size: 28px;
+    font-family: 'cursive';
   }
   
   .question-text {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+    font-family: 'fangsong';
   }
   
   .timer-text {

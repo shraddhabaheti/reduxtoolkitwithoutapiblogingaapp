@@ -20,18 +20,19 @@ import ArrauUseState from './ArrauUseState';
 import Tempapp from './component/Tempapp';
 import Time from './Time';
 import Quiz from './Quiz';
+import Page from './pagination/Page';
 
 
 function App() {
-  
+
   return (
     <div className="App">
-     
+    
     <BrowserRouter>
      
     <Next/>
      <Routes>
-     
+       
    
        <Route path='/pre' element={<Registration/>}></Route>
        <Route path="/login" element={<Login/>}></Route>
@@ -43,6 +44,7 @@ function App() {
        <Route path="/temp" element={<Tempapp/>}></Route>
        <Route path="/quiz" element={<Quiz/>}></Route>
        <Route path="/time" element={<Time/>}></Route>
+       <Route path="/page" element={<Page/>}></Route>
        
       </Routes>
      

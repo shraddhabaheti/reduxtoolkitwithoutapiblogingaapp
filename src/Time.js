@@ -26,6 +26,12 @@ export default function Time() {
          
             return parseInt((t1-t2)/(1000*60)%60);
         },
+        inSeconds:function(d1,d2){
+          var t2 = d2.getTime();
+            var t1 = d1.getTime();
+         
+            return parseInt((t1-t2)/(60)%60);
+        },
     
         inMonths: function(d1, d2) {
             var d1Y = d1.getFullYear();
@@ -71,6 +77,10 @@ export default function Time() {
       <div className='div_mar'>
           <h3>Minutes</h3>
           <h4>{DateDiff.inMinutes(d1, d2)}</h4>
+      </div>
+      <div className='div_mar'>
+          <h3>seconds</h3>
+          <h4>{DateDiff.inSeconds(d1, d2)}</h4>
       </div>
     
         

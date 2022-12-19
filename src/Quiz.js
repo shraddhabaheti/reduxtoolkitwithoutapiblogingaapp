@@ -1,10 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
 import './Quiz.css';
+import { useEffect } from 'react';
+
+import CountDownTimer from './CountDownTimer';
 export default function Quiz() {
+	
     const questions = [
 		{
 			questionText: 'What is the capital of France?',
+            questionId:1,
 			answerOptions: [
 				{ answerText: 'New York', isCorrect: false },
 				{ answerText: 'London', isCorrect: false },
@@ -14,6 +19,7 @@ export default function Quiz() {
 		},
 		{
 			questionText: 'Who is CEO of Tesla?',
+            questionId:2,
 			answerOptions: [
 				{ answerText: 'Jeff Bezos', isCorrect: false },
 				{ answerText: 'Elon Musk', isCorrect: true },
@@ -23,6 +29,7 @@ export default function Quiz() {
 		},
 		{
 			questionText: 'The iPhone was created by which company?',
+            questionId:3,
 			answerOptions: [
 				{ answerText: 'Apple', isCorrect: true },
 				{ answerText: 'Intel', isCorrect: false },
@@ -32,6 +39,7 @@ export default function Quiz() {
 		},
 		{
 			questionText: 'How many Harry Potter books are there?',
+            questionId:4,
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -41,6 +49,7 @@ export default function Quiz() {
 		},
         {
 			questionText: 'what is the Copy text?',
+            questionId:5,
 			answerOptions: [
 				{ answerText: 'Cltr+C', isCorrect: true },
 				{ answerText: 'Cltr+R', isCorrect: false },
@@ -50,6 +59,7 @@ export default function Quiz() {
 		},
         {
 			questionText: 'what is the paste text?',
+            questionId:6,
 			answerOptions: [
 				{ answerText: 'Cltr+C', isCorrect: false },
 				{ answerText: 'Cltr+R', isCorrect: false },
@@ -57,46 +67,111 @@ export default function Quiz() {
 				{ answerText: 'Cltr+v', isCorrect: false },
 			],
 		},
+		{
+			questionText: 'what is the selectAll text?',
+            questionId:7,
+			answerOptions: [
+				{ answerText: 'Cltr+C', isCorrect: false },
+				{ answerText: 'Cltr+R', isCorrect: false },
+				{ answerText: 'Cltr+A', isCorrect: true },
+				{ answerText: 'Cltr+v', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'what is the cut text?',
+            questionId:8,
+			answerOptions: [
+				{ answerText: 'Cltr+C', isCorrect: false },
+				{ answerText: 'Cltr+R', isCorrect: false },
+				{ answerText: 'Cltr+x', isCorrect: true },
+				{ answerText: 'Cltr+v', isCorrect: false },
+			],
+		},
 ];
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
+	const hoursMinSecs = { minutes:0 , seconds: 60}
 	const [score, setScore] = useState(0);
-
+	 let [counter, setCounter] = useState(10);
+	
+	// const timer = setInterval(() => {
+	// 	setCounter(counter - 1);
+	//   }, 1000);
+	//   if (counter == 0) {
+	// 	clearInterval(timer);
+	//   }
+	// let timer1=new Date().toLocaleTimeString('en-US')
+	let timer1=new Date().getTime();
+	 timer1 = setTimeout(() => setShowScore(true), 3000)
+	
+	useEffect(
+	  () => {
+		return () => {
+		  clearTimeout(timer1)
+		//   setShowScore(false)
+		}
+	  },
+	  [showScore]
+	)
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
-			setScore(score + 1);
+            
+                setScore(score + 1);
+				
+		
 		}
-
+	
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
-			setCurrentQuestion(nextQuestion);
-		} else {
-			setShowScore(true);
+        
+            setCurrentQuestion(nextQuestion)
+			
+        } else {
+           
+             setShowScore(true);
+           
+			// setShowScore(true);
 		}
 	};
+	
     return (
+		
 		<div className='app' >
+		  
+			{/* <div>TimeLeft:-{new Date().getTime(timer1)%60}</div> */}
+			
+			 {/* <span>Time Left {counter}<br/>
+       { (counter == 0) && <>All done</>}
+   </span>  */}
+         <CountDownTimer hoursMinSecs={hoursMinSecs}/>
+		
 			{showScore ? (
 				<div className='score-section'>
+					
 					You scored {score} out of {questions.length}
+					
 				</div>
 			) : (
-				<>
+				<> 
 					<div className='question-section'>
 						<div className='question-count'>
 							{/* <span>Question {currentQuestion + 1}</span>/{questions.length} */}
                             <span>Question{currentQuestion+1}</span>
+							
 						</div>
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
+						{questions[currentQuestion].answerOptions.map((answerOption,questionId) => (
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
+					
 					</div>
+					{/* <button onClick={()=>handleAnswerOptionClick()}>Next</button> */}
 				</>
 			)}
+			
 		</div>
 	);
 }

@@ -32,6 +32,7 @@ function Next() {
             <Link to="/temp" className='link'>temp</Link>
             <Link to="/quiz" className='link'>Quiz</Link>
             <Link to="/time" className='link'>Time</Link>
+            <Link to="/page" className='link'>page</Link>
           
       
       

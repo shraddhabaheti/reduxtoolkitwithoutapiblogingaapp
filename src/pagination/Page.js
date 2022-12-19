@@ -8,7 +8,7 @@ const Page=()=>{
    const [post,setPost]=useState([]);
    const [loading,setLoading]=useState(false);
    const [currentPage,setCurrentPage]=useState(1);
-   const [postPerPage,setPostPerPage]=useState(10);
+  const [postPerPage]=useState(10);
    useEffect(()=>{
     const fetchPost=async()=>{
        setLoading(true) 
@@ -19,16 +19,28 @@ const Page=()=>{
     }
     fetchPost();
    },[])
-  console.log(post);
+//   console.log(post);
   const indexOfLastPost=currentPage*postPerPage;
-  const indexOfFirstPost=indexOfLastPost -postPerPage;
-  const currentPost=post.slice(indexOfFirstPost,indexOfLastPost)
+   const indexOfFirstPost=indexOfLastPost -postPerPage;
+   const currentPost=post.slice(indexOfFirstPost,indexOfLastPost)
   const paginate=(pageNumber)=>setCurrentPage(pageNumber)
+  const previousPage = () => {
+    if (currentPage !== 1) {
+       setCurrentPage(currentPage - 1);
+    }
+ };
+
+ const nextPage = () => {
+    if (currentPage !== Math.ceil(post.length / postPerPage)) {
+       setCurrentPage(currentPage + 1);
+    }
+ };
     return(
         <div className='container mt-5'>
           <h1 className='text-primary mb-3'>MY BLOG</h1>
           <Page1 post={currentPost} loading={loading}/>
-          <Pagenation1 postPerPage={postPerPage} totalPost={post.length} paginate={paginate}/>
+          <Pagenation1 postPerPage={postPerPage} totalPost={post.length} paginate={paginate} previousPage={previousPage}
+                  nextPage={nextPage}/>
         </div>
     )
 }

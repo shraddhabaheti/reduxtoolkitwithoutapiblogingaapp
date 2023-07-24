@@ -20,15 +20,20 @@ function Todocurd() {
 
 
     const handleAddTodoCurd = (e) => {
+      
         e.preventDefault()
         if (input.id) {
             dispatch(editTodo(input))
             setInput({ text: "", id: "" })
               
-        } else {
+        } else if(input.text !== '') {
+            
             dispatch(addTodos(input.text))
-            setInput({ text: "" })
-            setToggleButton(false)
+            
+                setInput({ text: "" })
+                setToggleButton(false)
+            
+           
         }
         
 

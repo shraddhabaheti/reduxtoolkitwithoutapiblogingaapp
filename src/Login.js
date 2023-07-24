@@ -17,14 +17,10 @@ const Login = () => {
     const navigate=useNavigate();
     
      const selector = useSelector((state) => state);
-     
-    //  console.log("selector",selector)
- 
-    // console.log("====>",reg)
+    
     const dispatch=useDispatch();
     const handleChange=(e)=>{
-      let name= e.target.name;
-      let value=e.target.value;
+      let {name,value}=e.target
       if(name==="email_id"){
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
          if(!pattern.test(value)){
@@ -87,8 +83,7 @@ const Login = () => {
         // }
         const payload=selector.register.myRegistration.find((user)=>user.email_id === state.email_id && user.password === state.password )
         if(payload){
-        
-          console.log("cler=============")
+         console.log("cler=============")
          navigate('/todo')
           // 
         }else{

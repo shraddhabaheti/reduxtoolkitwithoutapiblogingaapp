@@ -36,7 +36,7 @@ const onDelete=()=>{
                   return(
                     <Card key={index} className="indexCard">
                     <Card.Img className='cardImage' variant="top" src={item?.image}/>
-                    <Card.Body>
+                    <Card.Body className='cardImage-overlay'>
                       <Card.Title>{item?.title}</Card.Title>
                       <Card.Text>
                       {item?.content}   

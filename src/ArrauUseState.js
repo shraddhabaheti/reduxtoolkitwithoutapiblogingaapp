@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useState,useEffect } from 'react'
 const initState=["clerk","burse"]
 export default function ArrauUseState() {
     const [persons,setperson]=useState(initState)
+    
     const handleClick=()=>{
         // persons.push("shraddha")
         // persons.push("Baheti")
@@ -12,7 +14,10 @@ export default function ArrauUseState() {
         setperson(newPerson)
     }
     console.log("ArrayUseState")
-   
+  //  useEffect(()=>{
+  //    axios.get('https://jsonplaceholder.typicode.com/posts')
+  //    .then((res)=>console.log("shradasdd",res))
+  //  })
   return (
     <div>
         <button onClick={handleClick}>Click</button>

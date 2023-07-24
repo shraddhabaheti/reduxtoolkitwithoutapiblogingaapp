@@ -21,7 +21,7 @@ import Tempapp from './component/Tempapp';
 import Time from './Time';
 import Quiz from './Quiz';
 import Page from './pagination/Page';
-
+import PaginationApi from './pagination/PaginationApi';
 
 function App() {
 
@@ -45,6 +45,8 @@ function App() {
        <Route path="/quiz" element={<Quiz/>}></Route>
        <Route path="/time" element={<Time/>}></Route>
        <Route path="/page" element={<Page/>}></Route>
+       <Route path="/pagenation" element={<PaginationApi/>}></Route>
+       
        
       </Routes>
      

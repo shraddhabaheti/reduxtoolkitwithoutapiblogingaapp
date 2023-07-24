@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react'
 import Page1 from './Page1';
 import Pagenation1 from './Pagenation1';
 
+import api from './api';
 const Page=()=>{
    const [post,setPost]=useState([]);
    const [loading,setLoading]=useState(false);
@@ -11,18 +12,39 @@ const Page=()=>{
   const [postPerPage]=useState(10);
    useEffect(()=>{
     const fetchPost=async()=>{
-       setLoading(true) 
-       const res=await axios.get('https://jsonplaceholder.typicode.com/posts')
+         setLoading(true) 
+          const res=await api.get('/posts')
        setPost(res.data);
-       setLoading(false)
+       setTimeout(()=>{
+        setLoading(false)
+       },3000)
+     
 
     }
     fetchPost();
    },[])
+   // useEffect(()=>{
+   //    setLoading(true) 
+   //    api.get("/posts")
+   //    .then((res)=>{
+        
+   //    setPost(res.data)
+   //    setTimeout(()=>{
+   //          setLoading(false)
+   //            },3000)
+   //    })
+   //    .catch((error)=>{
+   //       console.log(error)
+   //    })
+   //    .then(()=>{
+   //       setLoading(false)
+   //    });
+      
+   // },[])
 //   console.log(post);
   const indexOfLastPost=currentPage*postPerPage;
    const indexOfFirstPost=indexOfLastPost -postPerPage;
-   const currentPost=post.slice(indexOfFirstPost,indexOfLastPost)
+   const currentPost=post?.slice(indexOfFirstPost,indexOfLastPost)
   const paginate=(pageNumber)=>setCurrentPage(pageNumber)
   const previousPage = () => {
     if (currentPage !== 1) {

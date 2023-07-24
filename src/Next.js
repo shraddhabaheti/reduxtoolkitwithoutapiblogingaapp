@@ -33,6 +33,7 @@ function Next() {
             <Link to="/quiz" className='link'>Quiz</Link>
             <Link to="/time" className='link'>Time</Link>
             <Link to="/page" className='link'>page</Link>
+            <Link to="/pagenation" className='link'>pageNationApi</Link>
           
       
       
